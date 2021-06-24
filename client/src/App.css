@@ -1,22 +1,65 @@
-.App {
-  text-align: center;
+/* Css for registration page*/
+.Register{  
+  position: relative;
+  background: no-repeat; 
+ text-align: center;
+  background-size:cover;
+  overflow: visible;
+font-family:Verdana, Geneva, Tahoma, sans-serif
+
+}
+.heading{
+    padding-top: 10px;
+    text-align: center;
+    color:rgb(5, 5, 5);
+    font-size: 25px;
+}
+.Patient{
+ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ border-radius: 10px;
+ line-height: 40px;
+   border-radius: 10px;
+   background-color: #d5f1ebb4;
+   text-align: center;
+   padding-bottom: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
+.Patient input{
+  padding-left: 5px;
+}
+.Patient form select{
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing:border-box;
+}
+h5{
+  /* color: red; */
+  font-size: 10px;
+}
+.Patient Button{
+  padding-left: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Doctor{
+  line-height: 40px;
+   padding-bottom: 10px;
+   border-radius: 10px;
+   background-color: #d5f1ebb4;
+   text-align: center;
 }
+.b-container{
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  width: 37em;
+}
+.doctorverify{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ border-radius: 10px;
+ line-height: 40px;
+   border-radius: 10px;
+   background-color: #d5f1ebb4;
+   text-align: center;
+   padding-bottom: 10px;
 
-.App-link {
-  color: #09d3ac;
 }
