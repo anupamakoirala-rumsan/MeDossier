@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-function Register(){
+function Register(props){
     const pnameRef = React.useRef();
     const phoneRef = React.useRef();
     const genderRef = React.useRef();
@@ -12,6 +12,34 @@ function Register(){
     const dphoneRef = React.useRef();
     const hnameRef = React.useRef();
     const licenseRef = React.useRef();
+    const [err, Seterr]= useState();
+    const [derr,Setderr] = useState();
+    
+//     const pchangehandler = (event)=>{
+//     let phone = event.target.value
+//     let err =""
+//     if(Number(phone)){
+//     if(phone.length!==10){
+//         err = <h5>Must be 10 digit</h5>;
+//         // alert("Your number")
+//     }}
+//     else 
+//     err = <h5> Should be valid number</h5>
+//     Seterr(err);
+// }
+//     const dchangehandler = (event)=>{
+//         let phone = event.target.value
+//         let derr =""
+//         if(Number(phone)){
+//         if(phone.length!==10){
+//             derr = <h5 >Must be 10 digit</h5>;
+//         }}
+//         else 
+//         derr = <h5> Should be valid number</h5>
+//         Setderr(derr);
+    
+        
+//     }
     
     return(
         <div className="Main">
@@ -77,11 +105,13 @@ function Register(){
                     const gender = genderRef.current.value;
                     const dob = dobRef.current.value;
                     const blood = bloodRef.current.value;
+                    props.patientRegister(name,phone,gender,dob,blood);
                 }}> 
                 Submit </Button>
                 </form>
-                <Button
-                 
+                <Button onClick ={()=>{
+                    props.phandlelogin()
+                }}
                 >Login
                  </Button>
             </div>
@@ -113,6 +143,7 @@ function Register(){
                     <input type ="text" placeholder="9746025484"
                     ref ={dphoneRef} required/>
                    
+                    {derr}
                     <br/>
                     <label>Faculty: </label>
                     <input type="text"  name ="faculty"placeholder="Enter your faculty" 
@@ -130,17 +161,21 @@ function Register(){
                     const faculty = facultyRef.current.value;
                     const hname = hnameRef.current.value;
                     const license = licenseRef.current.value;
-                }}>
-                        Submit</Button>
+                    props.doctorRegister(name, hname,faculty,contact,license); }}>Submit</Button>
                 </form>
-                <Button>Login
+                <Button onClick ={()=>{
+                    props.dhandlelogin()
+                }}
+                >Login
                  </Button>
                  {/* <Button onClick={props.verify}>Verify</Button> */}
             </div>
             <br/>
             <div className="doctorverify">
                 <h3> Login as government agency</h3>
-                <Button >Login</Button>
+                <Button onClick ={()=>{
+                    props.handleverifier()
+                }}>Login</Button>
             </div>
             </div>
              <div>    
