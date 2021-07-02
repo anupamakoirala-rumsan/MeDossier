@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "ipfs-api": "^26.1.2",
+    "npm": "^7.19.0",
+    "react-bootstrap": "^1.6.1",
+    "react-router-dom": "^5.2.0"
+  }
+}
