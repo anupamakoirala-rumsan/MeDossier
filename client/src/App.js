@@ -7,6 +7,7 @@ import getWeb3 from './getWeb3';
 import history from './history'
 import Patient from './components/patient_dashboard';
 import Verifier from './components/verifier_dashboard';
+import {useMoralis} from './moralis/useMoralis'
 // import {CONTRACT_ADDRESS,ABI} from './config.js'
 function App() {
  const[currentAccount,setCurrentAccount]= useState('');
@@ -65,6 +66,7 @@ console.log('hh')
      console.log(error);
    }
  }
+ const {Moralis} = useMoralis();
   //Register Patient
   const patientRegister = async(name,phone,gender,dob,blood)=>{
     try{
@@ -92,6 +94,12 @@ catch(error){
   //Handle  patient Login
   const phandlelogin = async()=>{
     try{
+      var timestamp = new Date();
+      var nonce = Math.floor(Math.random()*10000000) 
+      Moralis.Web3.getSigningData =()=>"I am sigining my one time :"+nonce +"at" +timestamp;
+      const user = await Moralis.Web3.authenticate();
+      const eth =user.get('ethAddress')
+      console.log(eth);
       const patient = await contract.methods.getPatientDetails(currentAccount).call();
       setPatient(patient);
       console.log(patient)
